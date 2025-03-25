@@ -9,15 +9,15 @@ export default function Home() {
     <>
       <Hero />
       <section>
-        <h2>Our Expertise</h2>
-        <p>We specialize in the following areas:</p>
+        <h2>Nuestra experiencia</h2>
+        <p>Nos especializamos en las siguientes áreas:</p>
         <ul>
-          <li>Data Engineering</li>
-          <li>Data Architecture</li>
-          <li>Data Governance & Privacy</li>
-          <li>Generative AI</li>
-          <li>Machine Learning</li>
-          <li>Human-Centered Data</li>
+          <li>Ingeniería de datos</li>
+          <li>Arquitectura de datos</li>
+          <li>Gobernanza de datos y privacidad</li>
+          <li>IA generativa</li>
+          <li>Aprendizaje automático</li>
+          <li>Datos centrados en las personas</li>
         </ul>
       </section>
       <Workflows />
@@ -27,3 +27,4 @@ export default function Home() {
     </>
   );
 }
+
