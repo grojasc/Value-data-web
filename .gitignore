@@ -37,3 +37,13 @@ next-env.d.ts
 
 # contentlayer
 .contentlayer
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg
+*.egg-info/
+.env
+venv/
+.venv/
