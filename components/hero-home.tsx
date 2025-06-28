@@ -21,7 +21,7 @@ export default function HeroHome() {
                 data-aos="fade-up"
                 data-aos-delay={200}
               >
-                Desde la ingeniería de datos hasta la inteligencia artificial generativa, nuestras herramientas están diseñadas para ayudar a tu equipo a alcanzar nuevos niveles de eficiencia. Adaptadas a las necesidades de tu empresa, nuestras soluciones funcionan en todos los dispositivos y te brindan resultados poderosos con solo una configuración."
+                Desde la ingeniería de datos hasta la inteligencia artificial generativa, nuestras herramientas están diseñadas para ayudar a tu equipo a alcanzar nuevos niveles de eficiencia. Adaptadas a las necesidades de tu empresa, nuestras soluciones funcionan en todos los dispositivos y te brindan resultados poderosos con solo una configuración.
               </p>
               <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
                 <div data-aos="fade-up" data-aos-delay={400}>
