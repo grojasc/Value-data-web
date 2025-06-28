@@ -103,3 +103,13 @@ npm test
 ```
 
 to run the unit tests covering the `/api/contact` endpoint.
+
+### Email configuration
+
+The contact form can send messages via SMTP if the following environment variables are configured:
+
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` – SMTP connection details
+- `EMAIL_TO` – the destination address for messages
+- `EMAIL_FROM` – optional sender address
+
+If these variables are absent or `nodemailer` isn't installed, messages are logged to the console instead.
