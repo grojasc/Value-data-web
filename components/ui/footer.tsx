@@ -24,38 +24,7 @@ export default function Footer() {
           <div className="space-y-2">
             <h3 className="text-sm font-medium text-gray-200">Product</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Integrations
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Pricing &amp; Plans
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Changelog
-                </a>
-              </li>
+              {/* Removed unused product links */}
               <li>
                 <a
                   className="text-indigo-200/65 transition hover:text-indigo-500"
@@ -150,54 +119,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          {/* 4th block */}
-          <div className="space-y-2">
-            <h3 className="text-sm font-medium text-gray-200">
-              Content Library
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Templates
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Tutorials
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Knowledge base
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Learn
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="#0"
-                >
-                  Cookie manager
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Removed content library links */}
           {/* 5th block */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1 lg:text-right">
             <div className="mb-3">
