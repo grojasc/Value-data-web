@@ -5,6 +5,7 @@ export const metadata = {
 
 import PageIllustration from "@/components/page-illustration";
 import Hero from "@/components/hero-home";
+import Experience from "@/components/experience";
 import Workflows from "@/components/workflows";
 import Features from "@/components/features";
 import Testimonials from "@/components/testimonials";
@@ -15,18 +16,7 @@ export default function Home() {
     <>
       <PageIllustration />
       <Hero />
-      <section className="mx-auto max-w-6xl px-4 py-8">
-        <h2 className="mb-2 text-2xl font-semibold">Nuestra experiencia</h2>
-        <p className="mb-4">Nos especializamos en las siguientes áreas:</p>
-        <ul className="list-disc list-inside space-y-1">
-          <li>Ingeniería de datos</li>
-          <li>Arquitectura de datos</li>
-          <li>Gobernanza de datos y privacidad</li>
-          <li>IA generativa</li>
-          <li>Aprendizaje automático</li>
-          <li>Datos centrados en las personas</li>
-        </ul>
-      </section>
+      <Experience />
       <Workflows />
       <Features />
       <Testimonials />
