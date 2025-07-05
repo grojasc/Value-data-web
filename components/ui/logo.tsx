@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-const logoUrl =
-  "https://raw.githubusercontent.com/grojasc/Value-data-web/master/Value%20Data%20Logo.png";
+const logoUrl = "/images/Value-Data-Logo.svg";
 
 export default function Logo() {
   return (
