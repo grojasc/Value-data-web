@@ -25,20 +25,30 @@ export default function Footer() {
             <h3 className="text-sm font-medium text-gray-200">Producto</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
+                <button
+                  onClick={() => {
+                    const element = document.getElementById("casos-exito");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
                   className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="/manufactura"
                 >
                   Casos de éxito
-                </a>
+                </button>
               </li>
               <li>
-                <a
+                <button
+                  onClick={() => {
+                    const element = document.getElementById("contacto");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
                   className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="/contact"
                 >
                   Contacto
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -47,12 +57,17 @@ export default function Footer() {
             <h3 className="text-sm font-medium text-gray-200">Empresa</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
+                <button
+                  onClick={() => {
+                    const element = document.getElementById("nosotros");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
                   className="text-indigo-200/65 transition hover:text-indigo-500"
-                  href="/about"
                 >
                   Acerca de nosotros
-                </a>
+                </button>
               </li>
             </ul>
           </div>

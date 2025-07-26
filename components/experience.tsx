@@ -29,7 +29,7 @@ const experiencias = [
 
 export default function Experience() {
   return (
-    <section>
+    <section id="experiencia">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="pb-12 md:pb-20">
           <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
