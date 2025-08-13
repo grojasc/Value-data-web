@@ -2,14 +2,70 @@
 
 import { useState } from "react";
 
+interface FormErrors {
+  email?: string;
+  message?: string;
+}
+
 export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<string | null>(null);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = (): FormErrors => {
+    const newErrors: FormErrors = {};
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim()) {
+      newErrors.email = "El email es requerido";
+    } else if (!emailRegex.test(email)) {
+      newErrors.email = "Ingresa un email válido";
+    }
+    
+    // Message validation
+    if (!message.trim()) {
+      newErrors.message = "El mensaje es requerido";
+    } else if (message.trim().length < 10) {
+      newErrors.message = "El mensaje debe tener al menos 10 caracteres";
+    }
+    
+    return newErrors;
+  };
+
+  const handleEmailChange = (value: string) => {
+    setEmail(value);
+    if (errors.email) {
+      const newErrors = { ...errors };
+      delete newErrors.email;
+      setErrors(newErrors);
+    }
+  };
+
+  const handleMessageChange = (value: string) => {
+    setMessage(value);
+    if (errors.message) {
+      const newErrors = { ...errors };
+      delete newErrors.message;
+      setErrors(newErrors);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus(null);
+    
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setErrors({});
+    
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -25,6 +81,8 @@ export default function Contact() {
       }
     } catch (err) {
       setStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -59,43 +117,90 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="mb-2 block text-sm font-medium text-indigo-200/65" htmlFor="email">
-                  Email
+                  Email *
                 </label>
                 <input
                   id="email"
                   type="email"
-                  className="form-input w-full rounded-lg border border-gray-700 bg-gray-900/50 px-4 py-3 text-gray-200 placeholder-gray-600 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                  className={`form-input w-full rounded-lg border px-4 py-3 text-gray-200 placeholder-gray-600 bg-gray-900/50 focus:outline-none focus:ring-2 transition-all duration-200 ${
+                    errors.email 
+                      ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" 
+                      : "border-gray-700 focus:border-indigo-500 focus:ring-indigo-500/20"
+                  }`}
                   placeholder="tu@email.com"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => handleEmailChange(e.target.value)}
                   required
                 />
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-400 animate-pulse">{errors.email}</p>
+                )}
               </div>
               <div>
                 <label className="mb-2 block text-sm font-medium text-indigo-200/65" htmlFor="message">
-                  Mensaje
+                  Mensaje *
+                  <span className="ml-2 text-xs text-indigo-200/50">
+                    ({message.length}/500)
+                  </span>
                 </label>
                 <textarea
                   id="message"
-                  className="form-textarea w-full rounded-lg border border-gray-700 bg-gray-900/50 px-4 py-3 text-gray-200 placeholder-gray-600 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                  className={`form-textarea w-full rounded-lg border px-4 py-3 text-gray-200 placeholder-gray-600 bg-gray-900/50 focus:outline-none focus:ring-2 transition-all duration-200 resize-none ${
+                    errors.message 
+                      ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" 
+                      : "border-gray-700 focus:border-indigo-500 focus:ring-indigo-500/20"
+                  }`}
                   rows={5}
-                  placeholder="Cuéntanos sobre tu proyecto..."
+                  maxLength={500}
+                  placeholder="Cuéntanos sobre tu proyecto... (mínimo 10 caracteres)"
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => handleMessageChange(e.target.value)}
                   required
                 />
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-400 animate-pulse">{errors.message}</p>
+                )}
               </div>
               <button 
                 type="submit" 
-                className="btn w-full bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] py-3 text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] transition-all duration-200"
+                disabled={isSubmitting || Object.keys(errors).length > 0}
+                className={`btn w-full py-3 text-white transition-all duration-200 ${
+                  isSubmitting || Object.keys(errors).length > 0
+                    ? "bg-gray-600 cursor-not-allowed opacity-50"
+                    : "bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] hover:scale-105 transform"
+                }`}
               >
-                Enviar mensaje
+                {isSubmitting ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Enviando...
+                  </span>
+                ) : (
+                  "Enviar mensaje"
+                )}
               </button>
               {status === "ok" && (
-                <p className="text-center text-sm text-green-400">¡Mensaje enviado correctamente!</p>
+                <div className="text-center p-4 bg-green-500/20 rounded-lg border border-green-500/30">
+                  <p className="text-sm text-green-400 flex items-center justify-center gap-2">
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    ¡Mensaje enviado correctamente!
+                  </p>
+                </div>
               )}
               {status === "error" && (
-                <p className="text-center text-sm text-red-400">Hubo un problema al enviar el mensaje.</p>
+                <div className="text-center p-4 bg-red-500/20 rounded-lg border border-red-500/30">
+                  <p className="text-sm text-red-400 flex items-center justify-center gap-2">
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    Hubo un problema al enviar el mensaje.
+                  </p>
+                </div>
               )}
             </form>
           </div>

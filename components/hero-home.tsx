@@ -1,3 +1,5 @@
+"use client";
+
 import VideoThumb from "@/public/images/hero-image-01.jpg";
 import ModalVideo from "@/components/modal-video";
 
@@ -10,14 +12,14 @@ export default function HeroHome() {
           {/* Encabezado de la sección */}
           <div className="pb-12 text-center md:pb-20">
             <h1
-              className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl"
+              className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-primary-300),var(--color-secondary-400),var(--color-accent-400),var(--color-primary-400),var(--color-secondary-300))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl"
               data-aos="fade-up"
             >
               Acercamos la Inteligencia Artificial y los Datos a las Personas
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
-                className="mb-8 text-xl text-indigo-200/65"
+                className="mb-8 text-xl text-primary-200/80"
                 data-aos="fade-up"
                 data-aos-delay={200}
               >
@@ -32,7 +34,7 @@ export default function HeroHome() {
                         element.scrollIntoView({ behavior: "smooth", block: "start" });
                       }
                     }}
-                    className="btn group mb-4 w-full bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
+                    className="btn group mb-4 w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg hover:from-primary-600 hover:to-secondary-600 hover:scale-105 transform transition-all duration-200 sm:mb-0 sm:w-auto"
                   >
                     <span className="relative inline-flex items-center">
                       Comienza a construir

@@ -1,3 +1,5 @@
+"use client";
+
 export default function Cta() {
   return (
     <section className="relative overflow-hidden">

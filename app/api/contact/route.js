@@ -34,16 +34,35 @@ export async function POST(request) {
     try {
       await transporter.sendMail({
         from: process.env.EMAIL_FROM || process.env.SMTP_USER,
-        to: process.env.EMAIL_TO,
-        subject: 'New contact form message',
-        text: message,
+        to: process.env.EMAIL_TO || 'gonzalo@valuedata.us',
+        subject: `Nuevo mensaje de contacto desde ValueData`,
+        html: `
+          <h2>Nuevo mensaje de contacto</h2>
+          <p><strong>Email del contacto:</strong> ${email}</p>
+          <p><strong>Mensaje:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+          <hr>
+          <p><small>Enviado desde el formulario de contacto de ValueData</small></p>
+        `,
+        text: `
+          Nuevo mensaje de contacto
+          
+          Email: ${email}
+          Mensaje: ${message}
+          
+          Enviado desde el formulario de contacto de ValueData
+        `,
         replyTo: email,
       });
     } catch (err) {
       console.error('Email sending failed', err);
     }
   } else {
-    console.log('Contact', { email, message });
+    console.log('📧 NUEVO MENSAJE DE CONTACTO (modo desarrollo)');
+    console.log('📩 Para:', 'gonzalo@valuedata.us');
+    console.log('📨 De:', email);
+    console.log('💬 Mensaje:', message);
+    console.log('⚙️ Para enviar emails reales, configurar variables SMTP en .env.local');
   }
 
   return new Response(JSON.stringify({ status: 'ok' }), {
