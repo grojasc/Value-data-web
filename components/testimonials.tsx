@@ -6,38 +6,22 @@ import Image from "next/image";
 const testimonials = [
   {
     id: 1,
-    name: "María González",
-    role: "CTO",
-    company: "TechManufactura",
-    image: "/images/testimonial-01.jpg",
-    content: "ValueData transformó completamente nuestros procesos. El mantenimiento predictivo nos ahorró 40% en costos operativos y la precisión del sistema es excepcional.",
+    name: "Eduardo Ramírez",
+    role: "Director de Tecnología",
+    company: "UNIACC",
+    image: "/images/uniacc-logo.png",
+    logo: "/images/uniacc-logo.png",
+    content: "ValueData transformó nuestros procesos académicos con IA agents inteligentes. La optimización matemática de horarios y recursos mejoró significativamente nuestra eficiencia operacional.",
     rating: 5
   },
   {
     id: 2,
-    name: "Carlos Mendoza",
-    role: "Director de Operaciones",
-    company: "InnovaCorp",
-    image: "/images/testimonial-02.jpg",
-    content: "La implementación de IA generativa en nuestros flujos de trabajo aumentó la productividad en 35%. El equipo de ValueData nos acompañó en cada paso.",
-    rating: 5
-  },
-  {
-    id: 3,
-    name: "Ana Ruiz",
-    role: "Gerente de Calidad",
-    company: "ProducciónPlus",
-    image: "/images/testimonial-03.jpg",
-    content: "El sistema de computer vision para control de calidad detecta defectos que antes pasaban desapercibidos. La precisión del 99.5% es impresionante.",
-    rating: 5
-  },
-  {
-    id: 4,
-    name: "Roberto Silva",
-    role: "CEO",
-    company: "DataDriven Industries",
-    image: "/images/testimonial-04.jpg",
-    content: "ValueData nos ayudó a democratizar el acceso a IA en toda la organización. Ahora cada departamento puede aprovechar el poder de los datos.",
+    name: "Carolina Garcés",
+    role: "Gerente de Operaciones",
+    company: "GARCES FRUIT",
+    image: "/images/garces-fruit-logo.png",
+    logo: "/images/garces-fruit-logo.png",
+    content: "La implementación de computer vision para control de calidad y el modelamiento matemático de la cadena de frío revolucionó nuestras operaciones. Los insights de datos nos permiten tomar mejores decisiones.",
     rating: 5
   }
 ];
@@ -113,13 +97,15 @@ export default function Testimonials() {
                 {/* Main testimonial */}
                 <div className="text-center">
                   <div className="mb-6 flex justify-center">
-                    <Image
-                      className="rounded-full"
-                      src={testimonials[currentIndex].image}
-                      width={80}
-                      height={80}
-                      alt={testimonials[currentIndex].name}
-                    />
+                    <div className="rounded-2xl bg-white p-4 shadow-lg">
+                      <Image
+                        className="object-contain"
+                        src={testimonials[currentIndex].logo}
+                        width={120}
+                        height={60}
+                        alt={testimonials[currentIndex].company}
+                      />
+                    </div>
                   </div>
                   
                   {/* Stars */}

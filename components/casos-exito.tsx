@@ -68,10 +68,10 @@ export default function CasosExito() {
               data-aos="fade-up"
               data-aos-delay={200}
             >
-              Transformando industrias con IA
+              Historias reales de transformación digital que generan resultados medibles
             </h2>
             <p className="text-lg text-indigo-200/65" data-aos="fade-up" data-aos-delay={400}>
-              Descubre cómo hemos ayudado a empresas de diferentes sectores a aprovechar el poder de los datos y la inteligencia artificial.
+              Cada proyecto incluye desafíos únicos, soluciones personalizadas y métricas de impacto que demuestran valor tangible para nuestros clientes.
             </p>
           </div>
 

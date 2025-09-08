@@ -53,16 +53,16 @@ export default function Header() {
   };
 
   return (
-    <header className={`z-50 w-full transition-all duration-300 ${
+    <header className={`z-50 w-full transition-all duration-500 ${
       isScrolled 
-        ? 'fixed top-0 left-0 right-0 backdrop-blur-lg bg-gray-900/95 shadow-lg' 
-        : 'mt-2 md:mt-5'
+        ? 'fixed top-0 left-0 right-0 backdrop-blur-xl bg-neutral-900/95 shadow-xl border-b border-neutral-700/30' 
+        : 'mt-4 md:mt-8'
     }`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className={`relative flex h-14 items-center justify-between gap-3 px-3 transition-all duration-300 ${
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className={`relative flex h-16 items-center justify-between transition-all duration-500 ${
           isScrolled 
-            ? 'bg-gray-800/50 rounded-none border-b border-primary-500/20' 
-            : 'rounded-2xl bg-gray-900/90 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-primary-800),var(--color-primary-700),var(--color-primary-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] after:absolute after:inset-0 after:-z-10 after:backdrop-blur-xs'
+            ? 'px-0' 
+            : 'px-6 rounded-2xl bg-neutral-900/80 backdrop-blur-md border border-neutral-700/50 shadow-lg'
         }`}>
           {/* Site branding */}
           <div className="flex flex-1 items-center">
@@ -72,75 +72,72 @@ export default function Header() {
           </div>
 
           {/* Navigation menu */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-2">
             <button
               onClick={() => scrollToSection("experiencia")}
-              className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                 activeSection === "experiencia" 
-                  ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md" 
-                  : "text-gray-300 hover:text-white hover:bg-primary-800/50"
+                  ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-lg shadow-accent-500/25" 
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800/60 hover:shadow-md"
               }`}
             >
               Experiencia
             </button>
             <button
               onClick={() => scrollToSection("flujos")}
-              className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                 activeSection === "flujos" 
-                  ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md" 
-                  : "text-gray-300 hover:text-white hover:bg-primary-800/50"
+                  ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-lg shadow-accent-500/25" 
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800/60 hover:shadow-md"
               }`}
             >
               Flujos
             </button>
             <button
               onClick={() => scrollToSection("nosotros")}
-              className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                 activeSection === "nosotros" 
-                  ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md" 
-                  : "text-gray-300 hover:text-white hover:bg-primary-800/50"
+                  ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-lg shadow-accent-500/25" 
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800/60 hover:shadow-md"
               }`}
             >
               Nosotros
             </button>
             <button
               onClick={() => scrollToSection("casos-exito")}
-              className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                 activeSection === "casos-exito" 
-                  ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md" 
-                  : "text-gray-300 hover:text-white hover:bg-primary-800/50"
+                  ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-lg shadow-accent-500/25" 
+                  : "text-neutral-300 hover:text-white hover:bg-neutral-800/60 hover:shadow-md"
               }`}
             >
               Casos de Éxito
             </button>
           </nav>
-          {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end gap-3">
-            <li>
-              <button
-                onClick={() => scrollToSection("contacto")}
-                className="btn-sm bg-gradient-to-r from-primary-500 to-secondary-500 py-[5px] text-white shadow-lg hover:from-primary-600 hover:to-secondary-600 hover:scale-105 transform transition-all duration-200"
-              >
-                Contacto
-              </button>
-            </li>
-            <li>
+          {/* Action buttons */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scrollToSection("contacto")}
+              className="px-5 py-2 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-medium rounded-full shadow-lg shadow-secondary-500/25 hover:shadow-xl hover:scale-105 transform transition-all duration-300"
+            >
+              Contacto
+            </button>
+            
+            <div className="hidden lg:flex items-center gap-2">
               <Link
                 href="/signin"
-                className="btn-sm relative bg-linear-to-b from-gray-800 to-gray-800/60 bg-[length:100%_100%] bg-[bottom] py-[5px] text-gray-300 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-[length:100%_150%]"
+                className="px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white rounded-full hover:bg-neutral-800/60 transition-all duration-300"
               >
-                Sign In
+                Iniciar Sesión
               </Link>
-            </li>
-            <li>
               <Link
                 href="/signup"
-                className="btn-sm bg-gradient-to-r from-accent-500 to-accent-400 py-[5px] text-white shadow-lg hover:from-accent-600 hover:to-accent-500 hover:scale-105 transform transition-all duration-200"
+                className="px-5 py-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-medium rounded-full shadow-lg shadow-accent-500/25 hover:shadow-xl hover:scale-105 transform transition-all duration-300"
               >
-                Register
+                Registrarse
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
     </header>

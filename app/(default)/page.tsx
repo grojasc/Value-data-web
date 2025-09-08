@@ -5,12 +5,13 @@ export const metadata = {
 
 import PageIllustration from "@/components/page-illustration";
 import Hero from "@/components/hero-home";
-import Experience from "@/components/experience";
-import Workflows from "@/components/workflows";
+import WhyValueData from "@/components/why-valuedata";
+import ServicesGrid from "@/components/services-grid";
+import AgileProcess from "@/components/agile-process";
+import IndustriesCases from "@/components/industries-cases";
 import About from "@/components/about";
-import Stats from "@/components/stats";
-import CasosExito from "@/components/casos-exito";
 import Testimonials from "@/components/testimonials";
+import BlogResources from "@/components/blog-resources";
 import Contact from "@/components/contact";
 import Cta from "@/components/cta";
 
@@ -19,12 +20,13 @@ export default function Home() {
     <>
       <PageIllustration />
       <Hero />
-      <Experience />
-      <Workflows />
+      <WhyValueData />
+      <ServicesGrid />
+      <AgileProcess />
+      <IndustriesCases />
       <About />
-      <Stats />
-      <CasosExito />
       <Testimonials />
+      <BlogResources />
       <Contact />
       <Cta />
     </>
