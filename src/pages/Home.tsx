@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Bot, Brain, Eye, Zap, Workflow, Shield, Clock, TrendingUp, Wheat, Mountain, Truck, Factory, CheckCircle, Cpu, Database, LineChart } from 'lucide-react';
+import { ArrowRight, Bot, Brain, Eye, Zap, Workflow, Shield, Clock, TrendingUp, Wheat, Mountain, Truck, Factory, CheckCircle, Cpu, Database, LineChart, Users, DollarSign } from 'lucide-react';
 
 const Home = () => {
   const diferenciadores = [
@@ -113,8 +113,8 @@ const Home = () => {
               <span className="gradient-indigo-text">en tu organización</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-              No creamos IA tradicional. Diseñamos <strong>agentes autónomos</strong> que toman decisiones
-              en tu operación combinando optimización, visión, ML y GenAI.
+              Deja atrás el BI tradicional. Implementamos <strong>agentes autónomos</strong> que se integran
+              a tus sistemas y <strong>toman decisiones en tiempo real</strong>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -173,10 +173,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              No es IA tradicional
+              No es BI tradicional
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Nuestros agentes <strong>toman decisiones y ejecutan</strong>. No generan reportes ni dashboards - actúan.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              No construimos dashboards ni chatbots. Nuestros agentes <strong>automatizan el ciclo completo</strong>:
+              ingestan datos, modelan, predicen y <strong>ejecutan acciones</strong> sin intervención manual.
             </p>
           </div>
 
@@ -249,8 +250,66 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Industrias */}
+      {/* Casos de Éxito */}
       <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Resultados demostrados
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Agentes en producción generando valor real en operaciones.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-indigo-600">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mr-4">
+                  <Users className="h-6 w-6 text-indigo-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Workforce Optimization</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Agente que ajusta turnos y cargas laborales automáticamente según demanda y restricciones operativas.
+              </p>
+              <div className="bg-indigo-50 rounded-xl p-4">
+                <span className="text-3xl font-bold text-indigo-600">-20%</span>
+                <p className="text-sm text-indigo-800 mt-1">reducción en recursos con mejor servicio</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-green-600">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                  <DollarSign className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Price Intelligence</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Agente que analiza precios, competidores y demanda para definir estrategia óptima de pricing.
+              </p>
+              <div className="bg-green-50 rounded-xl p-4">
+                <span className="text-3xl font-bold text-green-600">+US$1M</span>
+                <p className="text-sm text-green-800 mt-1">impacto adicional en ingresos por año</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              to="/casos"
+              className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-700"
+            >
+              Ver más casos de éxito
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Industrias */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -294,7 +353,7 @@ const Home = () => {
       </section>
 
       {/* Agent Assessment CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-8 md:p-12 text-center">
             <div className="inline-flex items-center px-4 py-2 bg-white/20 rounded-full text-white text-sm font-medium mb-6">
@@ -302,10 +361,10 @@ const Home = () => {
               Agent Assessment
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Descubre qué agentes necesitas
+              ¿Qué decisiones puede tomar un agente por ti?
             </h2>
             <p className="text-xl text-indigo-100 mb-6 max-w-2xl mx-auto">
-              En 2 semanas identificamos los procesos que puedes automatizar con agentes de IA.
+              En 2 semanas mapeamos las decisiones repetitivas de tu operación y diseñamos los agentes que las automatizarán.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <div className="flex items-center text-white">
@@ -333,7 +392,7 @@ const Home = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             ¿Listo para tener agentes tomando decisiones en tu operación?
