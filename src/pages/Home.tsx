@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Bot, Brain, Eye, Zap, Workflow, Shield, Clock, TrendingUp, Wheat, Mountain, Truck, Factory, CheckCircle, Cpu, Database, LineChart, Users, DollarSign } from 'lucide-react';
+import { ArrowRight, Bot, Brain, Eye, Zap, Workflow, Shield, Clock, TrendingUp, Wheat, Mountain, Truck, Factory, CheckCircle, Cpu, Database, LineChart, Users, DollarSign, Gift } from 'lucide-react';
 
 const Home = () => {
   const diferenciadores = [
@@ -104,6 +104,10 @@ const Home = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
+            {/* Logo en Hero */}
+            <div className="flex justify-center mb-6">
+              <img src="/logo.png" alt="ValueData" className="h-20 w-auto" />
+            </div>
             <div className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-6">
               <Cpu className="h-4 w-4 mr-2" />
               AI Agentic Analytics
@@ -121,8 +125,8 @@ const Home = () => {
                 to="/contacto"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
-                Diseña tu primer agente
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <Gift className="mr-2 h-5 w-5" />
+                Prueba gratis 2 semanas
               </Link>
               <Link
                 to="/soluciones"
@@ -352,31 +356,36 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Agent Assessment CTA */}
+      {/* Prueba Gratuita CTA */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-8 md:p-12 text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-white/20 rounded-full text-white text-sm font-medium mb-6">
-              <Bot className="h-4 w-4 mr-2" />
-              Agent Assessment
+          <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+            {/* Logo watermark */}
+            <div className="absolute top-4 right-4 opacity-20">
+              <img src="/logo.png" alt="" className="h-16 w-auto" />
+            </div>
+            <div className="inline-flex items-center px-4 py-2 bg-green-400/20 rounded-full text-green-100 text-sm font-medium mb-6">
+              <Gift className="h-4 w-4 mr-2" />
+              Prueba Gratuita
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              ¿Qué decisiones puede tomar un agente por ti?
+              2 semanas gratis para probar
             </h2>
             <p className="text-xl text-indigo-100 mb-6 max-w-2xl mx-auto">
-              En 2 semanas mapeamos las decisiones repetitivas de tu operación y diseñamos los agentes que las automatizarán.
+              Mapeamos las decisiones de tu operación y diseñamos tu primer agente.
+              <strong className="text-white"> Sin costo, sin compromiso.</strong>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <div className="flex items-center text-white">
-                <CheckCircle className="h-5 w-5 mr-2 text-indigo-200" />
-                <span>2 semanas</span>
+                <CheckCircle className="h-5 w-5 mr-2 text-green-300" />
+                <span>100% gratuito</span>
               </div>
               <div className="flex items-center text-white">
-                <CheckCircle className="h-5 w-5 mr-2 text-indigo-200" />
+                <CheckCircle className="h-5 w-5 mr-2 text-green-300" />
                 <span>Roadmap de agentes</span>
               </div>
               <div className="flex items-center text-white">
-                <CheckCircle className="h-5 w-5 mr-2 text-indigo-200" />
+                <CheckCircle className="h-5 w-5 mr-2 text-green-300" />
                 <span>ROI estimado</span>
               </div>
             </div>
@@ -384,7 +393,7 @@ const Home = () => {
               to="/contacto"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-indigo-600 bg-white rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg"
             >
-              Solicitar Agent Assessment
+              Solicitar prueba gratuita
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
@@ -395,17 +404,17 @@ const Home = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            ¿Listo para tener agentes tomando decisiones en tu operación?
+            Comienza hoy con una prueba gratuita
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Conversemos sobre qué decisiones podemos automatizar con agentes en tu organización.
+            2 semanas sin costo para mapear tus decisiones y diseñar tu primer agente.
           </p>
           <Link
             to="/contacto"
             className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition-all duration-200"
           >
-            Agenda una llamada
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <Gift className="mr-2 h-5 w-5" />
+            Solicitar prueba gratuita
           </Link>
         </div>
       </section>

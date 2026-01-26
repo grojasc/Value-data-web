@@ -114,10 +114,10 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contacto | ValueData - Agenda un Diagnóstico</title>
+        <title>Prueba Gratuita | ValueData - 2 Semanas Sin Costo</title>
         <meta
           name="description"
-          content="Agenda un diagnóstico gratuito con ValueData. Te ayudamos a identificar oportunidades de IA para tu empresa."
+          content="Prueba gratuita de 2 semanas. Mapeamos tus decisiones y diseñamos tu primer agente de IA sin costo ni compromiso."
         />
         <meta name="keywords" content="contacto IA Chile, consultoría machine learning, diagnóstico gratuito, ValueData" />
         <link rel="canonical" href="https://valuedata.cl/contacto" />
@@ -127,12 +127,13 @@ const Contact = () => {
       <section className="pt-24 pb-16 bg-gradient-to-br from-indigo-50 via-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
+            <img src="/logo.png" alt="ValueData" className="h-16 w-auto mx-auto mb-6" />
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Conversemos sobre{' '}
-              <span className="gradient-indigo-text">tu proyecto</span>
+              Prueba gratuita de{' '}
+              <span className="gradient-indigo-text">2 semanas</span>
             </h1>
             <p className="text-xl text-gray-600">
-              Agenda un diagnóstico gratuito. Te ayudamos a identificar oportunidades de IA para tu empresa.
+              Sin costo ni compromiso. Mapeamos tus decisiones y diseñamos tu primer agente.
             </p>
           </div>
         </div>
@@ -322,26 +323,26 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Quick Assessment Card */}
-            <div className="bg-gradient-to-br from-indigo-600 to-blue-600 rounded-2xl p-6 text-white">
+            {/* Prueba Gratuita Card */}
+            <div className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl p-6 text-white">
               <h3 className="text-lg font-bold mb-3">
-                Quick Assessment
+                Prueba Gratuita
               </h3>
-              <p className="text-indigo-100 mb-4 text-sm">
-                En 2 semanas te entregamos un mapa de oportunidades de IA para tu empresa.
+              <p className="text-green-100 mb-4 text-sm">
+                2 semanas sin costo para mapear tus decisiones y diseñar tu primer agente.
               </p>
               <ul className="space-y-2 mb-4 text-sm">
                 <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 mr-2 text-indigo-200" />
-                  2 semanas de duración
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-200" />
+                  100% gratuito
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 mr-2 text-indigo-200" />
-                  Roadmap priorizado
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-200" />
+                  Sin compromiso
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 mr-2 text-indigo-200" />
-                  Quick wins identificados
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-200" />
+                  Roadmap + diseño de agente
                 </li>
               </ul>
             </div>
