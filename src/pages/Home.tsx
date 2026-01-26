@@ -6,26 +6,26 @@ const Home = () => {
   const diferenciadores = [
     {
       icon: Bot,
-      title: 'Agentes Autónomos',
-      description: 'IA que ejecuta, no solo recomienda. Agentes que toman decisiones y actúan en tiempo real.',
-      metric: 'Ejecución 24/7',
+      title: 'Decisiones, no reportes',
+      description: 'Nuestros agentes toman decisiones reales en tu operación. No generan PDFs ni dashboards.',
+      metric: 'Acción directa',
     },
     {
       icon: Workflow,
-      title: 'Orquestación Inteligente',
-      description: 'Múltiples agentes coordinados resolviendo problemas complejos de gestión.',
-      metric: 'Multi-agente',
+      title: 'En TU organización',
+      description: 'Los agentes operan dentro de tus sistemas, con tus datos, integrados a tu ERP.',
+      metric: 'Integración total',
     },
     {
       icon: Shield,
-      title: 'Control Total',
+      title: 'Control cuando quieras',
       description: 'Humano en el loop cuando lo necesitas. Trazabilidad completa de cada decisión.',
       metric: '100% auditable',
     },
     {
       icon: Clock,
-      title: 'Producción en 90 días',
-      description: 'De concepto a agentes funcionando en tu operación en 3 meses.',
+      title: 'En producción real',
+      description: 'Agentes funcionando en tu operación, no en un piloto eterno ni en un notebook.',
       metric: '90 días',
     },
   ];
@@ -87,7 +87,7 @@ const Home = () => {
         <title>ValueData | AI Agentic Analytics - Agentes Inteligentes para tu Empresa</title>
         <meta
           name="description"
-          content="Creamos agentes de IA autónomos que resuelven problemas de gestión empresarial. Optimización, Computer Vision, ML y GenAI trabajando juntos."
+          content="Diseñamos agentes de IA autónomos en tu organización para mejorar la toma de decisiones. No IA tradicional: agentes que ejecutan."
         />
         <meta name="keywords" content="AI agents, agentic AI, autonomous agents, machine learning, computer vision, GenAI, enterprise AI, Chile" />
         <link rel="canonical" href="https://valuedata.cl" />
@@ -109,12 +109,12 @@ const Home = () => {
               AI Agentic Analytics
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Agentes de IA que{' '}
-              <span className="gradient-indigo-text">resuelven tu gestión</span>
+              Agentes de IA{' '}
+              <span className="gradient-indigo-text">en tu organización</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-              Creamos agentes autónomos que combinan optimización, computer vision,
-              machine learning y GenAI para resolver problemas complejos de tu operación.
+              No creamos IA tradicional. Diseñamos <strong>agentes autónomos</strong> que toman decisiones
+              en tu operación combinando optimización, visión, ML y GenAI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -173,10 +173,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              IA que actúa, no solo recomienda
+              No es IA tradicional
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Nuestros agentes toman decisiones y ejecutan acciones en tu operación.
+              Nuestros agentes <strong>toman decisiones y ejecutan</strong>. No generan reportes ni dashboards - actúan.
             </p>
           </div>
 
@@ -210,10 +210,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Cómo funciona
+              Cómo llevamos agentes a tu organización
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              De tu problema de gestión a agentes funcionando en producción.
+              De tu problema de gestión a agentes tomando decisiones en tu operación.
             </p>
           </div>
 
@@ -222,27 +222,27 @@ const Home = () => {
               <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Define el problema</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">¿Qué decisiones automatizar?</h3>
               <p className="text-gray-600">
-                Identificamos qué decisiones quieres automatizar y qué datos tienes disponibles.
+                Identificamos las decisiones repetitivas que hoy toman tus equipos y que podrían tomar agentes.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Diseñamos los agentes</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Diseñamos tus agentes</h3>
               <p className="text-gray-600">
-                Combinamos las capacidades de IA necesarias: optimización, visión, ML o GenAI.
+                Combinamos optimización, visión, ML y GenAI según lo que necesita cada decisión.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Agentes en producción</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Agentes en tu operación</h3>
               <p className="text-gray-600">
-                Desplegamos agentes que trabajan 24/7 con monitoreo y control humano cuando necesites.
+                Desplegamos agentes integrados a tus sistemas que deciden y actúan 24/7.
               </p>
             </div>
           </div>
@@ -336,10 +336,10 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            ¿Listo para automatizar tu gestión con agentes de IA?
+            ¿Listo para tener agentes tomando decisiones en tu operación?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Conversemos sobre qué problemas podemos resolver con agentes inteligentes.
+            Conversemos sobre qué decisiones podemos automatizar con agentes en tu organización.
           </p>
           <Link
             to="/contacto"
