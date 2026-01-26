@@ -1,0 +1,53 @@
+import { Link } from 'react-router-dom';
+
+interface LogoProps {
+  variant?: 'full' | 'compact';
+  className?: string;
+}
+
+const Logo = ({ variant = 'full', className = '' }: LogoProps) => {
+  return (
+    <Link to="/" className={`flex items-center gap-2 ${className}`}>
+      {/* Monograma VD */}
+      <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center shadow-lg">
+        <svg
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-7 h-7"
+        >
+          {/* V */}
+          <path
+            d="M8 10L14 26L20 10"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* D */}
+          <path
+            d="M20 10V26H26C30 26 33 22 33 18C33 14 30 10 26 10H20"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      {/* Texto ValueData */}
+      {variant === 'full' && (
+        <div className="flex flex-col">
+          <span className="text-xl font-bold text-gray-900 leading-tight">
+            Value<span className="text-indigo-600">Data</span>
+          </span>
+          <span className="text-xs text-gray-500 leading-tight">
+            AI Agentic Analytics
+          </span>
+        </div>
+      )}
+    </Link>
+  );
+};
+
+export default Logo;

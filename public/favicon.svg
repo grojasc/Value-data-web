@@ -1,0 +1,30 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="robotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Antenas -->
+  <circle cx="30" cy="12" r="5" fill="#8B5CF6"/>
+  <circle cx="70" cy="12" r="5" fill="#3B82F6"/>
+  <line x1="30" y1="17" x2="35" y2="30" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
+  <line x1="70" y1="17" x2="65" y2="30" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Cabeza robot (speech bubble) -->
+  <path d="M15 35 Q15 25 25 25 L75 25 Q85 25 85 35 L85 65 Q85 75 75 75 L35 75 L20 90 L25 75 L25 75 Q15 75 15 65 Z" fill="url(#robotGrad)"/>
+
+  <!-- Ojos -->
+  <rect x="30" y="40" width="12" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="58" y="40" width="12" height="12" rx="2" fill="#1a1a2e"/>
+
+  <!-- Boca -->
+  <line x1="35" y1="60" x2="50" y2="60" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Circuitos -->
+  <circle cx="65" cy="60" r="4" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="55" y1="60" x2="61" y2="60" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="69" y1="60" x2="75" y2="60" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="75" cy="60" r="2" fill="#1a1a2e"/>
+</svg>
