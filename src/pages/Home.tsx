@@ -101,36 +101,50 @@ const Home = () => {
         {/* Animated background elements */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" />
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '3s' }} />
+        <div className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-25 animate-ping" style={{ animationDuration: '4s' }} />
+
+        {/* Floating particles */}
+        <div className="absolute top-1/4 right-20 w-4 h-4 bg-indigo-400 rounded-full opacity-40 animate-bounce" style={{ animationDuration: '2s' }} />
+        <div className="absolute top-1/3 left-20 w-3 h-3 bg-blue-400 rounded-full opacity-50 animate-bounce" style={{ animationDelay: '0.3s', animationDuration: '2.5s' }} />
+        <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-purple-400 rounded-full opacity-60 animate-bounce" style={{ animationDelay: '0.7s', animationDuration: '1.8s' }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            {/* Logo en Hero */}
-            <div className="flex justify-center mb-6">
-              <img src="/logo.png" alt="ValueData" className="h-20 w-auto" />
+            {/* Logo en Hero - más grande con animación */}
+            <div className="flex justify-center mb-8 animate-fade-in">
+              <div className="relative">
+                <div className="absolute inset-0 bg-indigo-400 rounded-full blur-2xl opacity-20 animate-pulse" />
+                <img
+                  src="/logo.png"
+                  alt="ValueData"
+                  className="h-32 md:h-40 w-auto relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+                />
+              </div>
             </div>
-            <div className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-6">
-              <Cpu className="h-4 w-4 mr-2" />
+            <div className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <Cpu className="h-4 w-4 mr-2 animate-spin" style={{ animationDuration: '3s' }} />
               AI Agentic Analytics
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               Agentes de IA{' '}
               <span className="gradient-indigo-text">en tu organización</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               Deja atrás el BI tradicional. Implementamos <strong>agentes autónomos</strong> que se integran
               a tus sistemas y <strong>toman decisiones en tiempo real</strong>.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
               <Link
                 to="/contacto"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-105"
               >
-                <Gift className="mr-2 h-5 w-5" />
+                <Gift className="mr-2 h-5 w-5 group-hover:animate-bounce" />
                 Prueba gratis 2 semanas
               </Link>
               <Link
                 to="/soluciones"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-indigo-600 bg-white border-2 border-indigo-200 rounded-xl hover:border-indigo-300 hover:bg-indigo-50 transition-all duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-indigo-600 bg-white border-2 border-indigo-200 rounded-xl hover:border-indigo-400 hover:bg-indigo-50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
                 Ver tipos de agentes
               </Link>
@@ -155,12 +169,13 @@ const Home = () => {
             {agentTypes.map((agent, index) => (
               <div
                 key={index}
-                className="group p-6 bg-gradient-to-br from-white to-indigo-50 rounded-2xl border border-gray-100 hover:border-indigo-300 hover:shadow-xl transition-all duration-300"
+                className="group p-6 bg-gradient-to-br from-white to-indigo-50 rounded-2xl border border-gray-100 hover:border-indigo-300 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <agent.icon className="h-7 w-7 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-indigo-500/30">
+                  <agent.icon className="h-7 w-7 text-white group-hover:animate-pulse" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
                   {agent.name}
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -223,8 +238,8 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-xl group-hover:shadow-indigo-500/40">
                 <span className="text-2xl font-bold text-white">1</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">¿Qué decisiones automatizar?</h3>
@@ -232,8 +247,8 @@ const Home = () => {
                 Identificamos las decisiones repetitivas que hoy toman tus equipos y que podrían tomar agentes.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-xl group-hover:shadow-indigo-500/40">
                 <span className="text-2xl font-bold text-white">2</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Diseñamos tus agentes</h3>
@@ -241,8 +256,8 @@ const Home = () => {
                 Combinamos optimización, visión, ML y GenAI según lo que necesita cada decisión.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-xl group-hover:shadow-indigo-500/40">
                 <span className="text-2xl font-bold text-white">3</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Agentes en tu operación</h3>
@@ -267,34 +282,34 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-indigo-600">
+            <div className="group bg-white rounded-2xl p-8 shadow-lg border-l-4 border-indigo-600 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mr-4">
-                  <Users className="h-6 w-6 text-indigo-600" />
+                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 group-hover:bg-indigo-600 transition-all duration-300">
+                  <Users className="h-6 w-6 text-indigo-600 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">Workforce Optimization</h3>
               </div>
               <p className="text-gray-600 mb-4">
                 Agente que ajusta turnos y cargas laborales automáticamente según demanda y restricciones operativas.
               </p>
-              <div className="bg-indigo-50 rounded-xl p-4">
-                <span className="text-3xl font-bold text-indigo-600">-20%</span>
+              <div className="bg-indigo-50 rounded-xl p-4 group-hover:bg-indigo-100 transition-colors">
+                <span className="text-3xl font-bold text-indigo-600 group-hover:scale-110 inline-block transition-transform">-20%</span>
                 <p className="text-sm text-indigo-800 mt-1">reducción en recursos con mejor servicio</p>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-green-600">
+            <div className="group bg-white rounded-2xl p-8 shadow-lg border-l-4 border-green-600 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
-                  <DollarSign className="h-6 w-6 text-green-600" />
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 group-hover:bg-green-600 transition-all duration-300">
+                  <DollarSign className="h-6 w-6 text-green-600 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">Price Intelligence</h3>
               </div>
               <p className="text-gray-600 mb-4">
                 Agente que analiza precios, competidores y demanda para definir estrategia óptima de pricing.
               </p>
-              <div className="bg-green-50 rounded-xl p-4">
-                <span className="text-3xl font-bold text-green-600">+US$1M</span>
+              <div className="bg-green-50 rounded-xl p-4 group-hover:bg-green-100 transition-colors">
+                <span className="text-3xl font-bold text-green-600 group-hover:scale-110 inline-block transition-transform">+US$1M</span>
                 <p className="text-sm text-green-800 mt-1">impacto adicional en ingresos por año</p>
               </div>
             </div>
