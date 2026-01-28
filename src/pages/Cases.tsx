@@ -76,13 +76,16 @@ const Cases = () => {
   return (
     <>
       <Helmet>
-        <title>Casos de Éxito | ValueData - AI Agentic Analytics</title>
+        <title>Casos de Éxito | Agentes de IA en Producción | ValueData</title>
         <meta
           name="description"
-          content="Casos reales de implementación de agentes de IA en agroindustria y transporte. Optimización, integración y automatización."
+          content="Casos reales de agentes de IA: optimización de campos agrícolas, captura de pickers, minimización de costos de transporte y conciliación automática. Chile."
         />
-        <meta name="keywords" content="casos de éxito IA, optimización agrícola, transporte inteligente, Chile" />
+        <meta name="keywords" content="casos éxito IA Chile, optimización agrícola, transporte inteligente, agentes producción, automatización logística, workforce optimization" />
         <link rel="canonical" href="https://valuedata.cl/casos" />
+        <meta property="og:title" content="Casos de Éxito - Agentes de IA en Producción | ValueData" />
+        <meta property="og:description" content="Soluciones implementadas y funcionando: optimización de campos, transporte y conciliación automática." />
+        <meta property="og:url" content="https://valuedata.cl/casos" />
       </Helmet>
 
       {/* Hero Section */}

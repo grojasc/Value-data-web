@@ -114,20 +114,23 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Prueba Gratuita | ValueData - 2 Semanas Sin Costo</title>
+        <title>Prueba Gratuita 2 Semanas | Agentes de IA | ValueData</title>
         <meta
           name="description"
-          content="Prueba gratuita de 2 semanas. Mapeamos tus decisiones y diseñamos tu primer agente de IA sin costo ni compromiso."
+          content="Prueba gratuita de 2 semanas: mapeamos tus decisiones y diseñamos tu primer agente de IA. Sin costo, sin compromiso. Contacto directo en Chile."
         />
-        <meta name="keywords" content="contacto IA Chile, consultoría machine learning, diagnóstico gratuito, ValueData" />
+        <meta name="keywords" content="prueba gratis IA, contacto agentes IA Chile, consultoría machine learning gratuita, diagnóstico IA empresarial, ValueData contacto" />
         <link rel="canonical" href="https://valuedata.cl/contacto" />
+        <meta property="og:title" content="Prueba Gratuita 2 Semanas | ValueData" />
+        <meta property="og:description" content="Sin costo ni compromiso. Mapeamos tus decisiones y diseñamos tu primer agente de IA." />
+        <meta property="og:url" content="https://valuedata.cl/contacto" />
       </Helmet>
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-indigo-50 via-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <img src="/logo.png" alt="ValueData" className="h-16 w-auto mx-auto mb-6" />
+            <img src="/logo.png" alt="ValueData - Solicita tu prueba gratuita de agentes de IA" className="h-16 w-auto mx-auto mb-6" />
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Prueba gratuita de{' '}
               <span className="gradient-indigo-text">2 semanas</span>

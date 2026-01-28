@@ -134,13 +134,16 @@ const Solutions = () => {
   return (
     <>
       <Helmet>
-        <title>Agentes de IA | ValueData - AI Agentic Analytics</title>
+        <title>Agentes de IA | ValueData - Optimización, ML, Vision, GenAI</title>
         <meta
           name="description"
-          content="Catálogo de agentes de IA autónomos: optimización, machine learning, computer vision y GenAI. Agentes en producción que resuelven problemas de gestión."
+          content="Catálogo de agentes de IA: WorkforceAgent, PricingAgent, QualityAgent y más. Agentes autónomos en producción para optimización, ML, computer vision y GenAI."
         />
-        <meta name="keywords" content="AI agents, autonomous agents, machine learning, computer vision, GenAI, enterprise AI Chile" />
+        <meta name="keywords" content="agentes IA optimización, workforce optimization, price intelligence, computer vision industrial, GenAI empresarial, machine learning Chile, automatización decisiones" />
         <link rel="canonical" href="https://valuedata.cl/soluciones" />
+        <meta property="og:title" content="Catálogo de Agentes de IA | ValueData" />
+        <meta property="og:description" content="Agentes autónomos listos para tu operación: optimización, machine learning, computer vision y GenAI." />
+        <meta property="og:url" content="https://valuedata.cl/soluciones" />
       </Helmet>
 
       {/* Hero Section */}

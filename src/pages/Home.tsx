@@ -84,13 +84,17 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>ValueData | AI Agentic Analytics - Agentes Inteligentes para tu Empresa</title>
+        <title>ValueData | AI Agentic Analytics - Agentes de IA para tu Empresa</title>
         <meta
           name="description"
-          content="Diseñamos agentes de IA autónomos en tu organización para mejorar la toma de decisiones. No IA tradicional: agentes que ejecutan."
+          content="Implementamos agentes de IA autónomos en tu organización para automatizar decisiones. No BI tradicional: agentes que ejecutan. Prueba gratis 2 semanas."
         />
-        <meta name="keywords" content="AI agents, agentic AI, autonomous agents, machine learning, computer vision, GenAI, enterprise AI, Chile" />
+        <meta name="keywords" content="agentes de IA, AI agentic analytics, automatización decisiones, inteligencia artificial empresarial, machine learning Chile, computer vision, GenAI, optimización workforce, price intelligence" />
         <link rel="canonical" href="https://valuedata.cl" />
+        <meta property="og:title" content="ValueData | AI Agentic Analytics - Agentes de IA para tu Empresa" />
+        <meta property="og:description" content="Implementamos agentes de IA autónomos en tu organización para automatizar decisiones. Prueba gratis 2 semanas." />
+        <meta property="og:url" content="https://valuedata.cl" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       {/* Hero Section */}
@@ -117,7 +121,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-indigo-400 rounded-full blur-2xl opacity-20 animate-pulse" />
                 <img
                   src="/logo.png"
-                  alt="ValueData"
+                  alt="ValueData - AI Agentic Analytics - Agentes de IA para empresas en Chile"
                   className="h-32 md:h-40 w-auto relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -377,7 +381,7 @@ const Home = () => {
           <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
             {/* Logo watermark */}
             <div className="absolute top-4 right-4 opacity-20">
-              <img src="/logo.png" alt="" className="h-16 w-auto" />
+              <img src="/logo.png" alt="ValueData logo" className="h-16 w-auto" aria-hidden="true" />
             </div>
             <div className="inline-flex items-center px-4 py-2 bg-green-400/20 rounded-full text-green-100 text-sm font-medium mb-6">
               <Gift className="h-4 w-4 mr-2" />

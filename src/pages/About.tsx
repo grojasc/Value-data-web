@@ -59,13 +59,16 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>Nosotros | ValueData - AI Agentic Analytics</title>
+        <title>Nosotros | ValueData - Empresa de AI Agentic Analytics en Chile</title>
         <meta
           name="description"
-          content="ValueData: empresa de AI Agentic Analytics. Creamos agentes autónomos que combinan optimización, ML, computer vision y GenAI."
+          content="ValueData: empresa de AI Agentic Analytics en Chile. Creamos agentes autónomos que combinan optimización, ML, computer vision y GenAI. Agentes en 90 días."
         />
-        <meta name="keywords" content="AI agentic analytics, autonomous agents, enterprise AI, Chile, LATAM" />
+        <meta name="keywords" content="AI agentic analytics Chile, agentes autónomos empresa, inteligencia artificial LATAM, consultoría IA, implementación machine learning" />
         <link rel="canonical" href="https://valuedata.cl/nosotros" />
+        <meta property="og:title" content="Nosotros | ValueData - AI Agentic Analytics Chile" />
+        <meta property="og:description" content="Creamos agentes autónomos que combinan optimización, ML, computer vision y GenAI. Resultados en 90 días." />
+        <meta property="og:url" content="https://valuedata.cl/nosotros" />
       </Helmet>
 
       {/* Hero Section */}

@@ -127,13 +127,16 @@ const Industries = () => {
   return (
     <>
       <Helmet>
-        <title>Industrias | ValueData - IA para Agroindustria, Minería, Logística</title>
+        <title>Agentes de IA por Industria | Agroindustria, Minería, Logística | ValueData</title>
         <meta
           name="description"
-          content="Soluciones de IA especializadas por industria: agroindustria, minería, logística y manufactura. Experiencia profunda en sectores clave de Chile."
+          content="Agentes de IA especializados por industria: agroindustria (cosecha, packing), minería (mantenimiento predictivo), logística (ruteo) y manufactura (calidad). Chile."
         />
-        <meta name="keywords" content="IA agroindustria Chile, machine learning minería, optimización logística, manufactura inteligente" />
+        <meta name="keywords" content="IA agroindustria Chile, machine learning minería, optimización logística, manufactura inteligente, agentes IA por sector, automatización industrial" />
         <link rel="canonical" href="https://valuedata.cl/industrias" />
+        <meta property="og:title" content="Agentes de IA por Industria | ValueData" />
+        <meta property="og:description" content="Experiencia profunda en agroindustria, minería, logística y manufactura con agentes de IA especializados." />
+        <meta property="og:url" content="https://valuedata.cl/industrias" />
       </Helmet>
 
       {/* Hero Section */}
