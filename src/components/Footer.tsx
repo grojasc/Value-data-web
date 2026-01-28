@@ -50,7 +50,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com/company/valuedata"
+                href="https://www.linkedin.com/company/value-data-ai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-indigo-400 transition-colors duration-200"
