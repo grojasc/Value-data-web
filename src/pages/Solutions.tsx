@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Calculator,
   Brain,
@@ -148,20 +149,40 @@ const Solutions = () => {
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-to-br from-indigo-50 via-white to-blue-50 relative overflow-hidden">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-30" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.3, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute top-10 right-10 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl"
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-6"
+            >
               <Bot className="h-4 w-4 mr-2" />
               Catálogo de Agentes
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            >
               Agentes de IA{' '}
               <span className="gradient-indigo-text">listos para tu operación</span>
-            </h1>
-            <p className="text-xl text-gray-600">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl text-gray-600"
+            >
               Cada agente ha sido probado en empresas reales. Elige el que necesitas o combínalos.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
@@ -174,20 +195,21 @@ const Solutions = () => {
               const IconComponent = category.icon;
               const isActive = activeCategory === category.id;
               return (
-                <button
+                <motion.button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`relative p-4 rounded-2xl text-left transition-all duration-300 ${
-                    isActive
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`relative p-4 rounded-2xl text-left transition-all duration-300 ${isActive
                       ? 'bg-gradient-to-br ' + category.color + ' text-white shadow-lg scale-105'
-                      : 'bg-gray-50 text-gray-600 hover:bg-gray-100 hover:scale-102'
-                  }`}
+                      : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+                    }`}
                 >
                   <IconComponent className={`h-8 w-8 mb-2 ${isActive ? 'text-white' : 'text-gray-400'}`} />
                   <span className={`text-sm font-semibold block ${isActive ? 'text-white' : 'text-gray-900'}`}>
                     {category.name}
                   </span>
-                </button>
+                </motion.button>
               );
             })}
           </div>
@@ -195,62 +217,79 @@ const Solutions = () => {
       </section>
 
       {/* Solutions Grid - More visual cards */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-50 min-h-[600px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {currentSolutions.map((solution, index) => {
-              const IconComponent = solution.icon;
-              return (
-                <div
-                  key={index}
-                  className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-                >
-                  {/* Card header with gradient */}
-                  <div className={`p-6 bg-gradient-to-br ${currentCategory?.color}`}>
-                    <div className="flex items-center justify-between">
-                      <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                        <IconComponent className="h-7 w-7 text-white" />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            >
+              {currentSolutions.map((solution, index) => {
+                const IconComponent = solution.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  >
+                    {/* Card header with gradient */}
+                    <div className={`p-6 bg-gradient-to-br ${currentCategory?.color}`}>
+                      <div className="flex items-center justify-between">
+                        <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                          <IconComponent className="h-7 w-7 text-white" />
+                        </div>
+                        <span className="text-white/80 text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
+                          {solution.result}
+                        </span>
                       </div>
-                      <span className="text-white/80 text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
-                        {solution.result}
-                      </span>
+                      <h3 className="text-xl font-bold text-white mt-4">
+                        {solution.name}
+                      </h3>
+                      <p className="text-white/80 text-sm">
+                        {solution.tagline}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold text-white mt-4">
-                      {solution.name}
-                    </h3>
-                    <p className="text-white/80 text-sm">
-                      {solution.tagline}
-                    </p>
-                  </div>
 
-                  {/* Card body */}
-                  <div className="p-6">
-                    <p className="text-gray-600 text-sm mb-4">
-                      {solution.description}
-                    </p>
-                    <Link
-                      to="/contacto"
-                      className="inline-flex items-center text-indigo-600 font-medium text-sm group-hover:text-indigo-700"
-                    >
-                      Quiero este agente
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                    {/* Card body */}
+                    <div className="p-6">
+                      <p className="text-gray-600 text-sm mb-4">
+                        {solution.description}
+                      </p>
+                      <Link
+                        to="/contacto"
+                        className="inline-flex items-center text-indigo-600 font-medium text-sm group-hover:text-indigo-700"
+                      >
+                        Quiero este agente
+                        <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
       {/* Visual: How agents work */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Así funcionan nuestros agentes
             </h2>
-          </div>
+          </motion.div>
 
           <div className="relative">
             {/* Connection line */}
@@ -263,13 +302,20 @@ const Solutions = () => {
                 { icon: Brain, title: 'Decisión', desc: 'Evalúan opciones óptimas' },
                 { icon: Zap, title: 'Acción', desc: 'Ejecutan automáticamente' },
               ].map((item, index) => (
-                <div key={index} className="text-center relative">
-                  <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="text-center relative"
+                >
+                  <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10 hover:scale-110 transition-transform duration-300">
                     <item.icon className="h-10 w-10 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h3>
                   <p className="text-gray-600 text-sm">{item.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -279,19 +325,25 @@ const Solutions = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-indigo-600 to-blue-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            ¿Necesitas un agente personalizado?
-          </h2>
-          <p className="text-xl text-indigo-100 mb-8">
-            Diseñamos agentes a medida combinando múltiples capacidades.
-          </p>
-          <Link
-            to="/contacto"
-            className="inline-flex items-center px-8 py-4 bg-white text-indigo-600 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
           >
-            Diseñar mi agente
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              ¿Necesitas un agente personalizado?
+            </h2>
+            <p className="text-xl text-indigo-100 mb-8">
+              Diseñamos agentes a medida combinando múltiples capacidades.
+            </p>
+            <Link
+              to="/contacto"
+              className="inline-flex items-center px-8 py-4 bg-white text-indigo-600 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg"
+            >
+              Diseñar mi agente
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
     </>
