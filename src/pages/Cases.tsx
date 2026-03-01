@@ -180,8 +180,8 @@ const Cases = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-blue-500/10 rounded-3xl blur-xl" />
                 <img
-                  src="/images/success-chart.jpg"
-                  alt="Gráfico de resultados de agentes de IA"
+                  src="/images/agentes.png"
+                  alt="Agentes autónomos de IA en producción - ValueData"
                   className="relative rounded-2xl shadow-xl border border-white/50 w-full max-w-md mx-auto"
                 />
               </div>

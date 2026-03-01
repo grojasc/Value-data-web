@@ -170,63 +170,47 @@ const About = () => {
       {/* What we do - Capabilities */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, type: 'spring' }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Nuestras capacidades de IA
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Las combinamos para crear agentes especializados en tu problema.
-              </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Nuestras capacidades de IA
+            </h2>
+            <p className="text-lg text-gray-600">
+              Las combinamos para crear agentes especializados en tu problema.
+            </p>
+          </motion.div>
 
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          >
+            {capabilities.map((cap, index) => (
               <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={containerVariants}
-                className="grid grid-cols-2 gap-4"
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.03 }}
+                className="group p-6 bg-gradient-to-br from-white to-indigo-50 rounded-2xl border border-gray-100 hover:border-indigo-300 hover:shadow-xl transition-all duration-200 text-center"
               >
-                {capabilities.map((cap, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="group p-4 bg-gradient-to-br from-white to-indigo-50 rounded-xl border border-gray-100 hover:border-indigo-300 hover:shadow-lg transition-all duration-200"
-                  >
-                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <cap.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                      {cap.title}
-                    </h3>
-                    <p className="text-gray-600 text-xs">
-                      {cap.description}
-                    </p>
-                  </motion.div>
-                ))}
+                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <cap.icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-base font-semibold text-gray-900 mb-2">
+                  {cap.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {cap.description}
+                </p>
               </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.8, type: 'spring' }}
-            >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-blue-500/10 rounded-3xl blur-xl" />
-                <img
-                  src="/images/agentes.png"
-                  alt="Agentes autónomos de IA - ValueData"
-                  className="relative rounded-2xl shadow-2xl border border-white/50 w-full object-cover"
-                />
-              </div>
-            </motion.div>
-          </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
