@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Bot } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,12 +25,32 @@ const Footer = () => {
     ],
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, staggerChildren: 0.05 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <footer className="bg-slate-900 text-white">
+    <motion.footer
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-50px' }}
+      variants={containerVariants}
+      className="bg-slate-900 text-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-1">
+          <motion.div variants={itemVariants} className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <img
                 src="/logo.png"
@@ -59,44 +80,44 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Agents */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="text-lg font-semibold mb-4 text-white">Agentes</h3>
             <ul className="space-y-2">
               {footerLinks.agentes.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-sm"
+                    className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Industries */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="text-lg font-semibold mb-4 text-white">Industrias</h3>
             <ul className="space-y-2">
               {footerLinks.industrias.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-sm"
+                    className="text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
             <div className="space-y-3">
               <a href="mailto:gonzalo@valuedata.cl" className="flex items-center text-gray-400 hover:text-indigo-400 text-sm transition-colors">
@@ -115,15 +136,15 @@ const Footer = () => {
             <div className="mt-4">
               <Link
                 to="/contacto"
-                className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-200"
+                className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/20"
               >
                 Diseña tu agente
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-slate-800">
+        <motion.div variants={itemVariants} className="mt-8 pt-8 border-t border-slate-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-500 text-sm">
               © {currentYear} ValueData. AI Agentic Analytics.
@@ -140,9 +161,9 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
