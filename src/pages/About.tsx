@@ -137,9 +137,9 @@ const About = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-blue-500/10 rounded-3xl blur-xl" />
                 <img
-                  src="/images/team.tech.png"
-                  alt="Equipo de profesionales ValueData"
-                  className="relative rounded-2xl shadow-2xl border border-white/50 w-full"
+                  src="/images/team-tech real.jpeg"
+                  alt="Equipo fundador ValueData - Gonzalo Rojas, Manuel Muñoz y Jorge Cordero"
+                  className="relative rounded-2xl shadow-2xl border border-white/50 w-full object-cover"
                 />
               </div>
             </motion.div>
@@ -170,53 +170,63 @@ const About = () => {
       {/* What we do - Capabilities */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Nuestras capacidades de IA
-            </h2>
-            <p className="text-xl text-gray-600">
-              Las combinamos para crear agentes especializados en tu problema.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, type: 'spring' }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Nuestras capacidades de IA
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Las combinamos para crear agentes especializados en tu problema.
+              </p>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
-          >
-            {capabilities.map((cap, index) => (
               <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{
-                  rotateX: 3,
-                  rotateY: -3,
-                  scale: 1.04,
-                  transition: { duration: 0.3 },
-                }}
-                style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
-                className="group p-6 bg-gradient-to-br from-white to-indigo-50 rounded-2xl border border-gray-100 hover:border-indigo-300 hover:shadow-xl transition-all duration-200 text-center glow-border cursor-pointer"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={containerVariants}
+                className="grid grid-cols-2 gap-4"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <cap.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {cap.title}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {cap.description}
-                </p>
+                {capabilities.map((cap, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="group p-4 bg-gradient-to-br from-white to-indigo-50 rounded-xl border border-gray-100 hover:border-indigo-300 hover:shadow-lg transition-all duration-200"
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <cap.icon className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                      {cap.title}
+                    </h3>
+                    <p className="text-gray-600 text-xs">
+                      {cap.description}
+                    </p>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8, type: 'spring' }}
+            >
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-blue-500/10 rounded-3xl blur-xl" />
+                <img
+                  src="/images/agentes.png"
+                  alt="Agentes autónomos de IA - ValueData"
+                  className="relative rounded-2xl shadow-2xl border border-white/50 w-full object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -415,66 +425,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Por qué elegirnos */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ¿Por qué ValueData?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Lo que nos diferencia de consultoras tradicionales y proveedores de BI.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            {[
-              {
-                title: 'Agentes, no reportes',
-                description: 'Mientras otras consultoras entregan dashboards y PDFs, nosotros entregamos agentes autónomos que toman decisiones y ejecutan acciones en tu operación.',
-              },
-              {
-                title: 'Resultados en 90 días',
-                description: 'No hacemos pilotos eternos. En 3 meses tienes agentes funcionando en producción, integrados a tus sistemas y generando valor medible.',
-              },
-              {
-                title: 'Conocimiento de industria',
-                description: 'Experiencia real en agroindustria, logística, transporte y manufactura. Entendemos tu operación porque hemos trabajado en ella.',
-              },
-              {
-                title: 'Tecnología de punta aplicada',
-                description: 'Combinamos optimización matemática, machine learning, computer vision y GenAI. No somos generalistas: cada agente usa la tecnología correcta para el problema.',
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="flex gap-4 p-6 bg-gray-50 rounded-2xl hover:bg-indigo-50 transition-colors duration-300"
-              >
-                <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center mt-1">
-                  <CheckCircle className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* Values */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -544,31 +494,38 @@ const About = () => {
           >
             {[
               {
-                role: 'Fundador & CEO',
-                expertise: 'Ingeniería Industrial, Optimización, ML',
-                description: 'Experiencia liderando proyectos de analítica avanzada en agroindustria, logística y transporte.',
+                name: 'Gonzalo Rojas Chacón',
+                initials: 'GR',
+                role: 'CoFounder & AI/Data Architect',
+                expertise: 'MBA, MSc AI, Ing. Civil Industrial',
+                description: 'Lidera la arquitectura de agentes de IA y la estrategia de datos. Experiencia en proyectos de analítica avanzada en agroindustria, logística y transporte.',
               },
               {
-                role: 'Ingeniería de IA',
-                expertise: 'Machine Learning, Computer Vision, GenAI',
-                description: 'Desarrollo de modelos en producción: optimización, predicción, visión computacional y procesamiento de lenguaje.',
+                name: 'Manuel Muñoz',
+                initials: 'MM',
+                role: 'CoFounder & Data Scientist',
+                expertise: 'Ing. Civil en Computación',
+                description: 'Responsable del desarrollo de modelos de machine learning, computer vision y GenAI en producción.',
               },
               {
-                role: 'Ingeniería de Software',
-                expertise: 'Cloud, Integración, Arquitectura',
-                description: 'Integración de agentes con sistemas empresariales: ERPs, bases de datos, APIs y plataformas cloud.',
+                name: 'Jorge Cordero',
+                initials: 'JC',
+                role: 'CoFounder & Optimization Lead',
+                expertise: 'Licenciado en Ingeniería',
+                description: 'Lidera los modelos de optimización matemática: scheduling, ruteo, asignación de recursos y planificación operacional.',
               },
             ].map((member, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-indigo-200 hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-indigo-200 hover:shadow-lg transition-all duration-200"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mb-5">
-                  <span className="text-white text-2xl font-bold">{member.role.charAt(0)}</span>
+                  <span className="text-white text-lg font-bold">{member.initials}</span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">{member.role}</h3>
-                <p className="text-sm text-indigo-600 font-medium mb-3">{member.expertise}</p>
+                <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
+                <p className="text-sm text-indigo-600 font-semibold mb-1">{member.role}</p>
+                <p className="text-xs text-gray-500 mb-3">{member.expertise}</p>
                 <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
               </motion.div>
             ))}
