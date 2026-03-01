@@ -32,6 +32,7 @@ const Header = () => {
     { name: 'Agentes', href: '/soluciones' },
     { name: 'Industrias', href: '/industrias' },
     { name: 'Casos', href: '/casos' },
+    { name: 'Metodología', href: '/metodologia' },
     { name: 'Nosotros', href: '/nosotros' },
   ];
 

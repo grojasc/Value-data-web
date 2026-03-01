@@ -8,6 +8,7 @@ import Solutions from './pages/Solutions';
 import Industries from './pages/Industries';
 import Cases from './pages/Cases';
 import About from './pages/About';
+import Methodology from './pages/Methodology';
 import Contact from './pages/Contact';
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
               <Route path="/industrias" element={<Industries />} />
               <Route path="/casos" element={<Cases />} />
               <Route path="/nosotros" element={<About />} />
+              <Route path="/metodologia" element={<Methodology />} />
               <Route path="/contacto" element={<Contact />} />
             </Routes>
           </main>

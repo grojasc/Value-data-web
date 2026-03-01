@@ -1,0 +1,445 @@
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import {
+  Bot,
+  Shield,
+  Zap,
+  ArrowRight,
+  CheckCircle,
+  Target,
+  Cpu,
+  Brain,
+  Eye,
+  Sparkles,
+} from 'lucide-react';
+
+const Methodology = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring' as const, stiffness: 60, damping: 20 },
+    },
+  };
+
+  const capabilities = [
+    {
+      icon: Cpu,
+      title: 'Optimización',
+      description: 'Algoritmos que encuentran la mejor solución entre millones de opciones.',
+    },
+    {
+      icon: Brain,
+      title: 'Machine Learning',
+      description: 'Modelos que predicen y detectan patrones en tus datos.',
+    },
+    {
+      icon: Eye,
+      title: 'Computer Vision',
+      description: 'IA que ve, clasifica y analiza imágenes y video.',
+    },
+    {
+      icon: Sparkles,
+      title: 'GenAI',
+      description: 'LLMs que procesan texto, documentos y conversan.',
+    },
+  ];
+
+  const valores = [
+    {
+      icon: Target,
+      title: 'Resultados medibles',
+      description: 'Cada agente tiene KPIs claros. Sin resultados, no hay proyecto.',
+    },
+    {
+      icon: Shield,
+      title: 'Control humano',
+      description: 'Tú decides cuánta autonomía tiene cada agente.',
+    },
+    {
+      icon: Zap,
+      title: 'Velocidad',
+      description: 'Agentes funcionando en 90 días, no en años.',
+    },
+  ];
+
+  return (
+    <>
+      <Helmet>
+        <title>Metodología | ValueData - Cómo Construimos Agentes de IA</title>
+        <meta
+          name="description"
+          content="Nuestra metodología para construir agentes autónomos de IA: diagnóstico, diseño, construcción y operación. Capacidades en optimización, ML, computer vision y GenAI."
+        />
+        <meta name="keywords" content="metodología IA, implementación agentes autónomos, proceso machine learning, consultoría IA Chile" />
+        <link rel="canonical" href="https://valuedata.cl/metodologia" />
+        <meta property="og:title" content="Metodología | ValueData - Cómo Construimos Agentes de IA" />
+        <meta property="og:description" content="Diagnóstico, diseño, construcción y operación. Agentes en producción en 90 días." />
+        <meta property="og:url" content="https://valuedata.cl/metodologia" />
+      </Helmet>
+
+      {/* Hero Section */}
+      <section className="pt-24 pb-12 bg-gradient-to-br from-indigo-50 via-white to-blue-50 relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.2, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute top-10 right-10 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-6"
+            >
+              <Bot className="h-4 w-4 mr-2" />
+              Cómo Trabajamos
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            >
+              Nuestra{' '}
+              <span className="gradient-indigo-text">metodología</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl text-gray-600"
+            >
+              Un proceso probado para llevar agentes autónomos a tu operación,
+              combinando las tecnologías correctas para cada problema.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Nuestras capacidades de IA
+            </h2>
+            <p className="text-lg text-gray-600">
+              Las combinamos para crear agentes especializados en tu problema.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          >
+            {capabilities.map((cap, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.03 }}
+                className="group p-6 bg-gradient-to-br from-white to-indigo-50 rounded-2xl border border-gray-100 hover:border-indigo-300 hover:shadow-xl transition-all duration-200 text-center"
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <cap.icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-base font-semibold text-gray-900 mb-2">
+                  {cap.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {cap.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How we're different */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, type: 'spring' }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                No entregamos reportes.<br />
+                Entregamos agentes funcionando.
+              </h2>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={containerVariants}
+                className="space-y-4"
+              >
+                {[
+                  'Agentes que toman decisiones, no dashboards que muestran datos',
+                  'Código en producción en 90 días, no PowerPoints en 6 meses',
+                  'ROI medible desde el primer mes de operación',
+                  'Humano en el loop cuando lo necesitas',
+                ].map((item, index) => (
+                  <motion.div key={index} variants={itemVariants} className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-indigo-600 mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{item}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Visual comparison */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="mt-8 grid grid-cols-2 gap-4"
+              >
+                <div className="p-4 bg-red-50 rounded-xl border border-red-100">
+                  <p className="text-sm font-semibold text-red-800 mb-2">BI Tradicional</p>
+                  <ul className="text-xs text-red-600 space-y-1">
+                    <li>Dashboards estáticos</li>
+                    <li>Reportes manuales</li>
+                    <li>6+ meses implementación</li>
+                    <li>Sin acción directa</li>
+                  </ul>
+                </div>
+                <div className="p-4 bg-green-50 rounded-xl border border-green-200">
+                  <p className="text-sm font-semibold text-green-800 mb-2">ValueData</p>
+                  <ul className="text-xs text-green-600 space-y-1">
+                    <li>Agentes autónomos</li>
+                    <li>Decisiones en tiempo real</li>
+                    <li>90 días en producción</li>
+                    <li>Ejecución automática</li>
+                  </ul>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, type: 'spring' }}
+              className="space-y-6"
+            >
+              <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-6">Nuestro enfoque</h3>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={containerVariants}
+                  className="space-y-4"
+                >
+                  {[
+                    'Agentes que escalan con tu operación',
+                    'Integración con tus sistemas existentes',
+                    'Monitoreo y mejora continua',
+                    'Soporte dedicado post-implementación',
+                  ].map((item, index) => (
+                    <motion.div key={index} variants={itemVariants} className="flex items-start">
+                      <CheckCircle className="h-6 w-6 text-indigo-200 mr-3 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src="/images/corporate-office.png"
+                  alt="Oficina corporativa ValueData"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="font-semibold">Santiago, Chile</p>
+                  <p className="text-sm text-indigo-200">Operando en LATAM</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Metodología - Steps */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Proceso de implementación
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              De la idea al agente en producción
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            {/* Connecting line - desktop */}
+            <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-indigo-200 via-indigo-400 to-blue-400" />
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-50px' }}
+              variants={containerVariants}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            >
+              {[
+                {
+                  step: 1,
+                  title: 'Diagnóstico',
+                  description: 'Analizamos tus procesos, datos disponibles y decisiones clave. Identificamos oportunidades de automatización con mayor impacto.',
+                },
+                {
+                  step: 2,
+                  title: 'Diseño',
+                  description: 'Definimos la arquitectura de agentes, fuentes de datos necesarias y puntos de integración con tus sistemas.',
+                },
+                {
+                  step: 3,
+                  title: 'Construcción',
+                  description: 'Desarrollamos, entrenamos y validamos los agentes con datos reales de tu operación.',
+                },
+                {
+                  step: 4,
+                  title: 'Operación',
+                  description: 'Desplegamos agentes en producción con monitoreo continuo, ajuste de parámetros y soporte dedicado.',
+                },
+              ].map((item) => (
+                <motion.div
+                  key={item.step}
+                  variants={itemVariants}
+                  className="relative text-center"
+                >
+                  <div className="relative z-10 w-14 h-14 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg shadow-indigo-500/20 ring-4 ring-white">
+                    <span className="text-xl font-bold text-white">{item.step}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="flex justify-center mt-12"
+          >
+            <div className="inline-flex items-center px-5 py-2.5 bg-indigo-50 border border-indigo-100 rounded-full">
+              <Zap className="h-4 w-4 text-indigo-600 mr-2" />
+              <span className="text-sm font-semibold text-indigo-700">90 días promedio de implementación</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Nuestros principios
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {valores.map((valor, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <valor.icon className="h-8 w-8 text-indigo-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {valor.title}
+                </h3>
+                <p className="text-gray-600">
+                  {valor.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-indigo-600 via-indigo-700 to-blue-600 animate-gradient-shift" style={{ backgroundSize: '200% 200%' }}>
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              ¿Listo para tus primeros agentes?
+            </h2>
+            <p className="text-xl text-indigo-100 mb-8">
+              Conversemos sobre qué problemas podemos automatizar.
+            </p>
+            <Link
+              to="/contacto"
+              className="inline-flex items-center px-8 py-4 bg-white text-indigo-600 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-2xl hover:-translate-y-1"
+            >
+              Agenda una llamada
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Methodology;

@@ -20,6 +20,7 @@ const Footer = () => {
     ],
     empresa: [
       { name: 'Nosotros', href: '/nosotros' },
+      { name: 'Metodología', href: '/metodologia' },
       { name: 'Casos de Éxito', href: '/casos' },
       { name: 'Contacto', href: '/contacto' },
     ],
